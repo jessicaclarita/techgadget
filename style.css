@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Raleway&display=swap");
+
+/*Global Classes*/
+button, button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/*Font Classes*/
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-nunito {
+  font-family: "Nunito", sans-serif;
+}
+
+.font-raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-18 {
+  font-size: 18px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+/*Color Classes*/
+.color-primary {
+  color: #252525;
+}
+
+.color-primary-bg {
+  background: #252525;
+}
+
+.color-second {
+  color: #0c60af;
+}
+
+.color-second-bg {
+  background: #0c60af;
+}
+
+.color-yellow {
+  color: #FFD700;
+}
+
+.color-yellow-bg {
+  background: #FFD700;
+}
+
+/* Top Sale Section */
+#top-sale .owl-carousel .item .product a {
+  overflow: hidden;
+}
+
+#top-sale .owl-carousel .item .product img {
+  transition: transform 0.5s ease;
+  height:200px;
+  object-fit: scale-down;
+  margin-bottom: 8px;
+}
+
+#top-sale .owl-carousel .item .product img:hover {
+  transform: scale(1.1);
+}
+
+#top-sale .owl-carousel .item .product .text-wrap{
+  height: 4rem;
+  align-items:center;
+  justify-content: center;
+  display: flex;
+}
+
+#top-sale .owl-carousel .owl-nav button {
+  position: absolute;
+  top: 30%;
+  outline: none;
+}
+#top-sale .owl-carousel .owl-nav button.owl-prev {
+  left: 0;
+}
+#top-sale .owl-carousel .owl-nav button.owl-prev span,
+#top-sale .owl-carousel .owl-nav button.owl-next span {
+  font-size: 35px;
+  color: #252525;
+  padding: 0 1rem;
+}
+#top-sale .owl-carousel .owl-nav button.owl-prev span {
+  margin-left: -4rem;
+}
+#top-sale .owl-carousel .owl-nav button.owl-next {
+  right: 0;
+}
+#top-sale .owl-carousel .owl-nav button.owl-next span {
+  margin-right: -4rem;
+}
+
+/*Special Price Section*/
+#special-price .grid .grid-item {
+  margin-right: 1.2rem;
+  margin-top: 1rem;
+}
+
+#special-price .grid .grid-item .item .product img{
+  height:200px;
+  object-fit: scale-down;
+  padding:0px 10px 8px;
+}
+
+#special-price .grid .grid-item .item .product .text-wrap{
+  height: 4rem;
+  align-items:center;
+  justify-content: center;
+  display: flex;
+}
+
+/*New-Products Section*/
+#new-products .owl-carousel .item .product img {
+  height:200px;
+  object-fit: scale-down;
+  margin-bottom: 8px;
+}
+
+#new-products .owl-carousel .item .product .text-wrap{
+  height: 4rem;
+  align-items:center;
+  justify-content: center;
+  display: flex;
+}
