@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 //Header
 include('components/header.php'); 
 ?>

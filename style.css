@@ -49,11 +49,11 @@ button, button:focus {
 }
 
 .color-second {
-  color: #0c60af;
+  color: #A8CC34;
 }
 
 .color-second-bg {
-  background: #0c60af;
+  background: #A8CC34;
 }
 
 .color-yellow {
@@ -65,65 +65,65 @@ button, button:focus {
 }
 
 /* Top Sale Section */
-#top-sale .owl-carousel .item .product a {
+#all-products .owl-carousel .item .product a {
   overflow: hidden;
 }
 
-#top-sale .owl-carousel .item .product img {
+#all-products .owl-carousel .item .product img {
   transition: transform 0.5s ease;
   height:200px;
   object-fit: scale-down;
   margin-bottom: 8px;
 }
 
-#top-sale .owl-carousel .item .product img:hover {
+#all-products .owl-carousel .item .product img:hover {
   transform: scale(1.1);
 }
 
-#top-sale .owl-carousel .item .product .text-wrap{
+#all-products .owl-carousel .item .product .text-wrap{
   height: 4rem;
   align-items:center;
   justify-content: center;
   display: flex;
 }
 
-#top-sale .owl-carousel .owl-nav button {
+#all-products .owl-carousel .owl-nav button {
   position: absolute;
   top: 30%;
   outline: none;
 }
-#top-sale .owl-carousel .owl-nav button.owl-prev {
+#all-products .owl-carousel .owl-nav button.owl-prev {
   left: 0;
 }
-#top-sale .owl-carousel .owl-nav button.owl-prev span,
-#top-sale .owl-carousel .owl-nav button.owl-next span {
+#all-products .owl-carousel .owl-nav button.owl-prev span,
+#all-products .owl-carousel .owl-nav button.owl-next span {
   font-size: 35px;
   color: #252525;
   padding: 0 1rem;
 }
-#top-sale .owl-carousel .owl-nav button.owl-prev span {
+#all-products .owl-carousel .owl-nav button.owl-prev span {
   margin-left: -4rem;
 }
-#top-sale .owl-carousel .owl-nav button.owl-next {
+#all-products .owl-carousel .owl-nav button.owl-next {
   right: 0;
 }
-#top-sale .owl-carousel .owl-nav button.owl-next span {
+#all-products .owl-carousel .owl-nav button.owl-next span {
   margin-right: -4rem;
 }
 
 /*Special Price Section*/
-#special-price .grid .grid-item {
+#all-brands .grid .grid-item {
   margin-right: 1.2rem;
   margin-top: 1rem;
 }
 
-#special-price .grid .grid-item .item .product img{
+#all-brands .grid .grid-item .item .product img{
   height:200px;
   object-fit: scale-down;
   padding:0px 10px 8px;
 }
 
-#special-price .grid .grid-item .item .product .text-wrap{
+#all-brands .grid .grid-item .item .product .text-wrap{
   height: 4rem;
   align-items:center;
   justify-content: center;

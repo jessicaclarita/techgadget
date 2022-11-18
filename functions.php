@@ -13,11 +13,9 @@ require ('database/cartDB.php');
 // DBController object
 $db = new DBController();
 
-// Product object
-$productDB = new Product($db);
-
-// Cart object
-$cartDB = new Cart($db);
-
+// Product object & class
+$productDB = new productDB($db);
 $product_data = $productDB->getData();
 
+// Cart object & class
+$cartDB = new cartDB($db);

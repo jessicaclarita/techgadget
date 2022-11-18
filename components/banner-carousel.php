@@ -8,13 +8,13 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="3000">
+            <a href="Product.php?product_id=15"><img src="assets/banner-gpu.jpg" class="d-block w-100" alt="..."></a>
+            </div>
+            <div class="carousel-item" data-interval="3000">
               <img src="assets/banner-monitor.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-interval="3000">
               <img src="assets/banner-laptop.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="3000">
-            <a href="Product.php"><img src="assets/banner-gpu.jpg" class="d-block w-100" alt="..."></a>
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">

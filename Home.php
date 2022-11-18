@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 //Header
 include('components/header.php'); 
 ?>
@@ -10,14 +11,11 @@ include('components/header.php');
 // Banner Carousel
 include('components/banner-carousel.php');
 
-// Top Sale
-include('components/top-sale.php');
+// All Products
+include('components/all-products.php');
 
-// Special Price
-include('components/special-price.php');
-
-// Banner Ads
-include('components/banner-ads.php');
+// All Brands
+include('components/all-brands.php');
 
 // New Products
 include('components/new-products.php');

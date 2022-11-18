@@ -11,7 +11,7 @@ include('components/header.php');
 include('components/product-details.php');
 
 // Top Sale
-include('components/top-sale.php');
+include('components/all-products.php');
 ?>
 
 </main>

@@ -1,7 +1,7 @@
 <?php
 
-// Use to fetch product data
-class Product
+// To fetch product data
+class productDB
 {
     public $db = null;
 
@@ -11,30 +11,30 @@ class Product
         $this->db = $db;
     }
 
-    // fetch all product data using getData Method
+    // Get all product data
     public function getData($table = 'product'){
         $result = $this->db->con->query("SELECT * FROM {$table}");
 
         $resultArray = array();
 
         // fetch product data one by one
-        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-            $resultArray[] = $item;
+        while ($product = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $resultArray[] = $product;
         }
 
         return $resultArray;
     }
 
-    // get product using item id
-    public function getProduct($item_id = null, $table= 'product'){
-        if (isset($item_id)){
-            $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id={$item_id}");
+    // Get all product data using barcode no
+    public function getProduct($product_id = null, $table= 'product'){
+        if (isset($product_id)){
+            $result = $this->db->con->query("SELECT * FROM {$table} WHERE BarcodeNo={$product_id}");
 
             $resultArray = array();
 
             // fetch product data one by one
-            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                $resultArray[] = $item;
+            while ($product = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                $resultArray[] = $product;
             }
 
             return $resultArray;

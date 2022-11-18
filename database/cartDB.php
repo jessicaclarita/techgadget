@@ -1,7 +1,7 @@
 <?php
 
-// php cart class
-class Cart
+// To fetch cart data
+class cartDB
 {
     public $db = null;
 
@@ -11,8 +11,8 @@ class Cart
         $this->db = $db;
     }
 
-    // insert into cart table
-    public  function insertIntoCart($params = null, $table = "cart"){
+    // Insert data into shopping cart's table
+    public function insertIntoCart($params = null, $table = "shoppingcart"){
         if ($this->db->con != null){
             if ($params != null){
                 // "Insert into cart(user_id) values (0)"
@@ -31,15 +31,16 @@ class Cart
         }
     }
 
-    // to get user_id and item_id and insert into cart table
-    public  function addToCart($userid, $itemid){
-        if (isset($userid) && isset($itemid)){
+    // Get customer_id and product_id and insert into cart table
+    public  function addToCart($customer_id, $product_id){
+        // Get customer_id and product_id
+        if (isset($customer_id) && isset($product_id)){
             $params = array(
-                "user_id" => $userid,
-                "item_id" => $itemid
+                "CustomerID" => $customer_id,
+                "BarcodeNo" => $product_id
             );
 
-            // insert data into cart
+            // Insert data into cart table
             $result = $this->insertIntoCart($params);
             if ($result){
                 // Reload Page
@@ -48,10 +49,10 @@ class Cart
         }
     }
 
-    // delete cart item using cart item id
-    public function deleteCart($item_id = null, $table = 'cart'){
-        if($item_id != null){
-            $result = $this->db->con->query("DELETE FROM {$table} WHERE item_id={$item_id}");
+    // Delete cart items using cart's product's barcodeno
+    public function deleteCart($product_id = null, $table = 'shoppingcart'){
+        if($product_id != null){
+            $result = $this->db->con->query("DELETE FROM {$table} WHERE BarcodeNo={$product_id}");
             if($result){
                 header("Location:" . $_SERVER['PHP_SELF']);
             }
@@ -59,19 +60,19 @@ class Cart
         }
     }
 
-    // calculate sub total
+    // Calculate sub total
     public function getSum($arr){
         if(isset($arr)){
             $sum = 0;
-            foreach ($arr as $item){
-                $sum += floatval($item[0]);
+            foreach ($arr as $product){
+                $sum += floatval($product[0]);
             }
             return sprintf('%.2f' , $sum);
         }
     }
 
-    // get item_it of shopping cart list
-    public function getCartId($cartArray = null, $key = "item_id"){
+    // Get product's BarcodeNo of shopping cart list
+    public function getCartId($cartArray = null, $key = "BarcodeNo"){
         if ($cartArray != null){
             $cart_id = array_map(function ($value) use($key){
                 return $value[$key];
@@ -80,11 +81,11 @@ class Cart
         }
     }
 
-    // Save for later
-    public function saveForLater($item_id = null, $saveTable = "wishlist", $fromTable = "cart"){
-        if ($item_id != null){
-            $query = "INSERT INTO {$saveTable} SELECT * FROM {$fromTable} WHERE item_id={$item_id};";
-            $query .= "DELETE FROM {$fromTable} WHERE item_id={$item_id};";
+    // Pay
+/*     public function pay($product_id = null, $toTable = "invoice", $fromTable = "cart"){
+        if ($product_id != null){
+            $query = "INSERT INTO {$toTable} SELECT * FROM {$fromTable} WHERE BarcodeNo={$product_id};";
+            $query .= "DELETE FROM {$fromTable} WHERE BarcodeNo={$product_id};";
 
             // execute multiple query
             $result = $this->db->con->multi_query($query);
@@ -94,7 +95,5 @@ class Cart
             }
             return $result;
         }
-    }
-
-
+    } */
 }

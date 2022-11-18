@@ -35,8 +35,8 @@
     <link rel="stylesheet" href="style.css">
 
     <?php
-    // Database Functions
-    require('functions.php')
+      // Database Functions
+      require('functions.php')
     ?>
     
 </head>
@@ -44,12 +44,11 @@
 
     <!-- Header -->
     <header id="header" class="fixed-top">
-      <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
-          <p class="font-raleway font-size-14 text-black-50 m-0">302CEM Group 5 Website</p>
+      <div class="strip d-flex justify-content-between px-4 py-1 color-second-bg">
+          <p class="font-montserrat font-weight-bold font-size-14 text-black-50 m-0">302CEM Group 5 Website</p>
           <div class="font-raleway font-size-14">
-              <a href="#" class="px-3 border-right border-left text-dark">Login</a>
-              <a href="#" class="px-3 border-right text-dark">Order History</a>
-              <a href="#" class="px-3 border-right text-dark"><i class="pr-2 fas fa-shopping-cart"></i>Cart (0)</a>
+              <a href="#" class="px-3 border-right border-left border-secondary text-dark">Login</a>
+              <a href="Cart.php" class="px-3 border-right border-secondary text-dark"><i class="pr-2 fas fa-shopping-cart"></i>Cart (<?php echo count($productDB->getData('shoppingcart')); ?>)</a>
           </div>
       </div>
 
@@ -63,15 +62,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav m-auto font-size-20">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="Home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="Home.php">Orders</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Warranty</a>
                 </li>
-                <li class="nav-item dropdown">
+                <!-- Products Button -->
+                <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Products
                   </a>
@@ -85,12 +85,13 @@
                     <li><a class="dropdown-item" href="#">External Hard Disk</a></li>
                     <li><a class="dropdown-item" href="#">Accessories</a></li>
                   </ul>
-                </li>
+                </li> -->
               </ul>
-              <form class="form-inline">
+              <!-- Search Form -->
+              <!-- <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light mx-2 my-2 my-sm-0" type="submit">Search</button>
-              </form>
+              </form> -->
             </div>
           </div>
         </nav>

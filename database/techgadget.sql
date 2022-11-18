@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2022 at 01:30 PM
+-- Generation Time: Oct 26, 2022 at 05:11 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- PHP Version: 8.1.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -77,7 +77,7 @@ INSERT INTO `customer` (`CustomerID`, `username`, `FirstName`, `LastName`, `Phon
 --
 
 CREATE TABLE `invoice` (
-  `TransactionNo` int(5) NOT NULL,
+  `TransactionNo` int(9) NOT NULL,
   `CustomerID` int(5) NOT NULL,
   `BarcodeNo` int(5) NOT NULL,
   `ShipmentID` int(5) NOT NULL,
@@ -148,6 +148,7 @@ INSERT INTO `product` (`BarcodeNo`, `ProductName`, `Category`, `Quantity`, `Deta
 
 CREATE TABLE `review` (
   `ReviewID` int(5) NOT NULL,
+  `BarcodeNo` int(10) NOT NULL,
   `CustomerID` int(5) NOT NULL,
   `Rating` int(1) NOT NULL,
   `ReviewDate` date NOT NULL,
@@ -165,7 +166,7 @@ CREATE TABLE `reward` (
   `RewardID` int(5) NOT NULL,
   `CustomerID` int(5) NOT NULL,
   `RewardName` varchar(50) NOT NULL,
-  `Reward Details` longtext NOT NULL,
+  `RewardDetails` longtext NOT NULL,
   `ClaimState` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -255,7 +256,8 @@ ALTER TABLE `product`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`ReviewID`),
-  ADD KEY `CustomerNum` (`CustomerID`);
+  ADD UNIQUE KEY `BarcodeNo` (`BarcodeNo`) USING BTREE,
+  ADD KEY `CustomerID` (`CustomerID`) USING BTREE;
 
 --
 -- Indexes for table `reward`
@@ -275,6 +277,7 @@ ALTER TABLE `shipment`
 -- Indexes for table `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
+  ADD PRIMARY KEY (`ShoppingCartID`),
   ADD KEY `CustomerIdd` (`CustomerID`),
   ADD KEY `BarcodeNum` (`BarcodeNo`);
 
@@ -306,7 +309,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `TransactionNo` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `TransactionNo` int(9) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -331,6 +334,12 @@ ALTER TABLE `reward`
 --
 ALTER TABLE `shipment`
   MODIFY `ShippingID` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `shoppingcart`
+--
+ALTER TABLE `shoppingcart`
+  MODIFY `ShoppingCartID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
