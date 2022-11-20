@@ -49,13 +49,17 @@
                   <span>$<?php echo $product['RetailPrice']; ?></span>
                 </div>
                   <form method="post">
-                    <input type="hidden" name="customer_id" value="<?php echo 1; /*$product['CustomerID']*/ ?>">
+                    <input type="hidden" name="customer_id" value="<?php echo $_SESSION["id"]; ?>">
                     <input type="hidden" name="product_id" value="<?php echo $product['BarcodeNo'] ?? '1'; ?>">
                       <?php
-                        if (in_array($product['BarcodeNo'], $in_cart ?? [])){
-                          echo '<button type="submit" disabled class="btn btn-secondary font-size-12">In the Cart</button>';
+                        if ($product['Quantity'] > 0){
+                          if (in_array($product['BarcodeNo'], $in_cart ?? [])){
+                            echo '<button type="submit" disabled class="btn btn-secondary font-size-12">In the Cart</button>';
+                          } else {
+                            echo '<button type="submit" name="all_brands_submit" class="btn color-second-bg font-size-12">Add to Cart</button>';
+                          }
                         } else {
-                          echo '<button type="submit" name="all_brands_submit" class="btn color-second-bg font-size-12">Add to Cart</button>';
+                          echo '<button type="submit" disabled class="btn btn-secondary font-size-12">Out of Stock</button>';
                         }
                       ?>
                   </form>

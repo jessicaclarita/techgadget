@@ -35,8 +35,27 @@
     <link rel="stylesheet" href="style.css">
 
     <?php
+    // database configuration
+    require 'database/config.php';
+
+    // validate user
+    if(!empty($_SESSION["id"])) {
+      $id = $_SESSION["id"];
+      $result = mysqli_query($con, "SELECT * FROM customer WHERE CustomerID = $id");
+      $row = mysqli_fetch_assoc($result);
+
+
+      // to count items in user's shopping cart
+      $cart = mysqli_query($con, "SELECT COUNT(CustomerID) FROM shoppingcart WHERE CustomerID = $id");
+      $cartrow = mysqli_fetch_assoc($cart);
+      
       // Database Functions
-      require('functions.php')
+      require('functions.php');
+    }
+    else {
+      // ask user to login
+      header("Location: login.php");
+    }
     ?>
     
 </head>
@@ -45,17 +64,18 @@
     <!-- Header -->
     <header id="header" class="fixed-top">
       <div class="strip d-flex justify-content-between px-4 py-1 color-second-bg">
-          <p class="font-montserrat font-weight-bold font-size-14 text-black-50 m-0">302CEM Group 5 Website</p>
+          <p class="font-montserrat font-weight-bold font-size-14 text-black-50 m-0">Welcome, <?php echo $row["username"]; ?> !</p>
           <div class="font-raleway font-size-14">
-              <a href="#" class="px-3 border-right border-left border-secondary text-dark">Login</a>
-              <a href="Cart.php" class="px-3 border-right border-secondary text-dark"><i class="pr-2 fas fa-shopping-cart"></i>Cart (<?php echo count($productDB->getData('shoppingcart')); ?>)</a>
+              <a href="Account.php" class="px-3 border-right border-left border-secondary text-dark"><i class="pr-2 fas fa-user"></i>My Account</a>
+              <a href="Cart.php" class="px-3 border-right border-secondary text-dark"><i class="pr-2 fas fa-shopping-cart"></i>My Cart (<?php foreach($cartrow as $carts){ print_r($carts); }?>)</a>
+              <a href="logout.php" class="px-3 border-right border-secondary text-dark"><i class="pr-2 fas fa-right-from-bracket"></i>Logout</a>
           </div>
       </div>
 
       <!-- Navigation Bar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="assets/logo_free-file.png" width="30" height="30" class="d-inline-block align-top" alt=""> Tech Gadget</a>
+            <a class="navbar-brand" href="Home.php"><img src="assets/logo_free-file.png" width="30" height="30" class="d-inline-block align-top" alt=""> Tech Gadget</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -65,7 +85,7 @@
                   <a class="nav-link" href="Home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Home.php">Orders</a>
+                  <a class="nav-link" href="Reward.php">Reward</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Warranty</a>

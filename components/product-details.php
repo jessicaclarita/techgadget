@@ -78,16 +78,20 @@
                                     <div class="form-row pt-4 font-size-16 font-montserrat">
                                         <div class="col">
                                             <?php
-                                                if (in_array($product['BarcodeNo'], $cartDB->getCartId($productDB->getData('shoppingcart')) ?? [])){
-                                                    echo '<button type="submit" disabled class="btn btn-secondary font-size-16 form-control">In the Cart</button>';
+                                                if ($product['Quantity'] > 0){
+                                                    if (in_array($product['BarcodeNo'], $cartDB->getCartId($productDB->getData('shoppingcart')) ?? [])){
+                                                        echo '<button type="submit" disabled class="btn btn-secondary form-control">In the Cart</button>';
+                                                    } else {
+                                                      echo '<button type="submit" name="all_products_submit" class="btn color-second-bg form-control">Add to Cart</button>';
+                                                    }
                                                 } else {
-                                                    echo '<button type="submit" name="all_products_submit" class="btn color-second-bg font-size-16 form-control">Add to Cart</button>';
+                                                      echo '<button type="submit" disabled class="btn btn-secondary form-control">Out of Stock</button>';
                                                 }
                                             ?>
                                         </div>
                                         <div class="col">
                                             <form method="post">
-                                                <input type="hidden" name="customer_id" value="<?php echo 1/*$product['CustomerID']*/; ?>">
+                                                <input type="hidden" name="customer_id" value="<?php echo $_SESSION["id"]; ?>">
                                                 <input type="hidden" name="product_id" value="<?php echo $product['BarcodeNo'] ?? '1'; ?>">
                                                 <button type="submit" class="btn btn-primary form-control">Proceed to Buy</button>
                                             </form>
