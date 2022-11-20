@@ -21,7 +21,7 @@
                             ?>
                                 <div class="row border-top py-3 mt-3">
                                     <div class="col-sm-2">
-                                        <img src="<?php echo $product['ImageURL']; ?>" style="height: 120px;" alt="cart1" class="img-fluid">
+                                        <img src="<?php echo $product['ImageURL']; ?>" alt="cart-img" class="img-fluid">
                                     </div>
                                     <div class="col-sm-8">
                                         <h5 class="font-montserrat font-size-20"><?php echo $product['ProductName']; ?></h5>

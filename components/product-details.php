@@ -55,23 +55,6 @@
                                 </div>
                               <!-- Product Policy -->
                                 <hr>
-
-                             <div class="row">
-                            
-                                 <div class="col-6">
-                                   <!-- Product Quantity -->  
-                                     <div class="qty d-flex">
-                                         <h6 class="font-montserrat">Quantity</h6>
-                                         <div class="px-4 d-flex font-raleway">
-                                             <button data-id="<?php echo $product['BarcodeNo'] ?? '0'; ?>" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
-                                             <input type="text" data-id="<?php echo $product['BarcodeNo'] ?? '0'; ?>" class="qty_input border px-4 w-50 bg-light" disabled value="1" placeholder="1">
-                                             <button class="qty-up border bg-light" data-id="<?php echo $product['BarcodeNo'] ?? '0'; ?>"><i class="fas fa-angle-up"></i></button>
-                                         </div>
-                                     </div>
-                                    <!-- Product Quantity -->  
-                                 </div>
-                             </div>
-
                             <!-- Buy & Cart Buttons -->
                              <div class="row">
                                 <div class="col">
@@ -82,7 +65,7 @@
                                                     if (in_array($product['BarcodeNo'], $cartDB->getCartId($productDB->getData('shoppingcart')) ?? [])){
                                                         echo '<button type="submit" disabled class="btn btn-secondary form-control">In the Cart</button>';
                                                     } else {
-                                                      echo '<button type="submit" name="all_products_submit" class="btn color-second-bg form-control">Add to Cart</button>';
+                                                      echo '<button type="submit" name="product_details_submit" class="btn color-second-bg form-control">Add to Cart</button>';
                                                     }
                                                 } else {
                                                       echo '<button type="submit" disabled class="btn btn-secondary form-control">Out of Stock</button>';

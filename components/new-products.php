@@ -44,7 +44,7 @@
                                 if (in_array($product['BarcodeNo'], $cartDB->getCartId($productDB->getData('shoppingcart')) ?? [])){
                                     echo '<button type="submit" disabled class="btn btn-secondary font-size-12">In the Cart</button>';
                                 } else {
-                                  echo '<button type="submit" name="all_products_submit" class="btn color-second-bg font-size-12">Add to Cart</button>';
+                                  echo '<button type="submit" name="new_products_submit" class="btn color-second-bg font-size-12">Add to Cart</button>';
                                 }
                               } else {
                                   echo '<button type="submit" disabled class="btn btn-secondary font-size-12">Out of Stock</button>';
