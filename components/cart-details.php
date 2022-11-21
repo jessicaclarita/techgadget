@@ -64,7 +64,11 @@
                                 <div class="border-top py-4">
                                     <h5 class="font-montserrat font-size-20">Subtotal (<?php echo isset($subTotal) ? count($subTotal) : 0; ?> item(s)):&nbsp; <span class="text-danger">
                                         $<span class="text-danger" id="deal-price"><?php echo isset($subTotal) ? $cartDB->getSum($subTotal) : 0; ?></span> </span> </h5>
-                                    <button type="submit" class="btn btn-warning mt-3">Proceed to Buy</button>
+                                        <?php 
+                                            echo '<form method="POST" action="Checkout.php">
+                                            <button type="submit" class="btn btn-warning mt-3">Proceed to Buy</button>
+                                            </form>';
+                                        ?>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 //Header
 include('components/header.php'); 
 ?>
@@ -10,7 +10,10 @@ include('components/header.php');
 // Product Details
 include('components/product-details.php');
 
-// Top Sale
+// Product Reviews
+include('product-reviews.php');
+
+// All Products
 include('components/all-products.php');
 ?>
 

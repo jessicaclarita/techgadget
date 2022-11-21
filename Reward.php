@@ -12,7 +12,7 @@ include('components/header.php');
 
 			<h3 class="font-weight-bold color-second">Discount</h3>
 			<p class="font-size-18">
-				The discount eligibility is determined by the ringgit amount of product customer bought. Customer may entitled for a 10% discount on every RM50 purchase.
+				The discount eligibility is determined by the ringgit amount of product customer bought. Customer may entitled for a 10% discount on every $50 purchase.
 				<br><br>
 			</p>
 
@@ -27,7 +27,7 @@ include('components/header.php');
 
 			<h3 class="font-weight-bold color-second">Free Delivery</h3>
 			<p class="font-size-18">
-				Customer may redeem a free delivery service when purchase total above RM70. The reward will be applied automatically on the check out page.
+				Customer may redeem a free delivery service when purchase total above $70. The reward will be applied automatically on the check out page.
 			</p>
 		</div>
 </div>

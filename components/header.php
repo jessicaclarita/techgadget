@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <?php 
+    <?php
     //get the file path
     $file = basename($_SERVER['PHP_SELF']);
 
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- CSS File -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 
     <?php
     // database configuration
@@ -88,7 +88,7 @@
                   <a class="nav-link" href="Reward.php">Reward</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Warranty</a>
+                  <a class="nav-link" href="Warranty.php">Warranty</a>
                 </li>
                 <!-- Products Button -->
                 <!-- <li class="nav-item dropdown">

@@ -44,6 +44,8 @@ class cartDB
             $result = $this->insertIntoCart($params);
             if ($result){
                 // Reload Page
+                //echo '<script type="text/JavaScript">location.replace(self.location.href)</script>';
+                error_reporting(E_ERROR | E_PARSE);
                 header("Location: " . $_SERVER['PHP_SELF']);
             }
         }
