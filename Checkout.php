@@ -8,7 +8,7 @@ include('components/header.php');
 <main id="main-site" class="position-relative pt-md-4  mt-md-4">
 
 <?php
-// Banner Carousel
+// Checkout Cart
 include('components/check-out.php');
 ?>
 

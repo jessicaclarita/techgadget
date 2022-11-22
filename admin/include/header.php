@@ -6,7 +6,7 @@
 				</a>
 
 			  	<a class="brand" href="#">
-			  		TechGadget| Admin
+			  		TechGadget | Admin
 			  	</a>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">

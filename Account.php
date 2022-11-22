@@ -1,27 +1,63 @@
 <?php
-include('components/header.php'); 
+include('components/header.php');
+
+// change personal information
+if(isset($_POST['updateinfo'])) {
+	$name=$_POST['name'];
+	$lname=$_POST['lname'];
+	$contactno=$_POST['contactno'];
+	$query=mysqli_query($con,"UPDATE `customer` SET `FirstName`='$name', `LastName`='$lname', `Phone`='$contactno' where `CustomerID`='".$_SESSION['id']."'");
+
+	if($query) {
+		echo "<script>alert('Your info has been updated');</script>";
+	}
+}
+
+// change password
+if(isset($_POST['changepass'])){
+	$sql=mysqli_query($con,"SELECT `Password` FROM `customer` where `Password`='".md5($_POST['cpass'])."' && `CustomerID`='".$_SESSION['id']."'");
+	$num=mysqli_fetch_array($sql);
+	$newpass=md5($_POST['newpass']);
+
+
+	if($num>0) {
+		$query=mysqli_query($con,"UPDATE `customer` SET `Password`='$newpass' WHERE `CustomerID`='".$_SESSION['id']."'");
+		if($query) {
+			echo "<script>alert('Password Changed Successfully !!');</script>";
+		} else {
+            echo "<script>alert('Failed to Change Password !!');</script>";
+        }
+	} else {
+		echo "<script>alert('Wrong Password !!');</script>";
+	}
+}
 ?>
 
 <script type="text/javascript">
 	function valid(){
 		if(document.chngpwd.cpass.value=="") {
-			alert("Current Password Filed is Empty !!");
+			alert("Current Password Field is Empty !!");
 			document.chngpwd.cpass.focus();
 			return false;
 		}
 		else if(document.chngpwd.newpass.value=="") {
-			alert("New Password Filed is Empty !!");
+			alert("New Password Field is Empty !!");
 			document.chngpwd.newpass.focus();
 			return false;
 		}
 		else if(document.chngpwd.cnfpass.value=="") {
-			alert("Confirm Password Filed is Empty !!");
+			alert("Confirm Password Field is Empty !!");
 			document.chngpwd.cnfpass.focus();
 			return false;
 		}
 		else if(document.chngpwd.newpass.value!= document.chngpwd.cnfpass.value) {
-			alert("Password and Confirm Password Field do not match  !!");
+			alert("Password and Confirm Password Fields do not match  !!");
 			document.chngpwd.cnfpass.focus();
+			return false;
+		}
+		else if(document.chngpwd.newpass.value!= document.chngpwd.cpass.value) {
+			alert("There is no difference between Current Password and New Password  !!");
+			document.chngpwd.newpass.focus();
 			return false;
 		}
 	return true;
@@ -67,7 +103,7 @@ include('components/header.php');
 							<label class="info-title" for="Contact No.">Birth Date<span class="text-danger">*</span></label>
 							<input type="text" class="form-control unicase-form-control text-input" id="birthday" name="birthday" required="required" value="<?php echo $row['BirthDate'];?>"  maxlength="10">
 						</div>
-						<button type="submit" name="update" class="btn-upper btn color-second-bg form-control checkout-page-button">Update</button>
+						<button type="submit" name="updateinfo" class="btn-upper btn color-second-bg form-control checkout-page-button">Update</button>
 					</form>
 				</div>
 				<!-- change personal information  -->
@@ -88,7 +124,7 @@ include('components/header.php');
 							<label class="info-title" for="Confirm Password">Confirm Password<span class="text-danger">*</span></label>
 							<input type="password" class="form-control unicase-form-control text-input" id="cnfpass" name="cnfpass" required="required" >
 						</div>
-						<button type="submit" name="submit" class="btn-upper btn color-second-bg form-control checkout-page-button">Change Password</button>
+						<button type="submit" name="changepass" class="btn-upper btn color-second-bg form-control checkout-page-button">Change Password</button>
 					</form> 
 				</div>
 				<!-- change password  -->

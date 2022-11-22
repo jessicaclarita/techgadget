@@ -13,11 +13,11 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
 
 if(isset($_POST['submit']))
 {
-$sql=mysqli_query($con,"SELECT `Password` FROM `administration` where `Password`='".md5($_POST['password'])."' && `username`='".$_SESSION['alogin']."'");
+$sql=mysqli_query($con,"SELECT `Password` FROM `administrator` where `Password`='".md5($_POST['password'])."' && `username`='".$_SESSION['alogin']."'");
 $num=mysqli_fetch_array($sql);
 if($num>0)
 {
- $con=mysqli_query($con,"UPDATE `administration` set `Password`='".md5($_POST['newpassword'])."' where `username`='".$_SESSION['alogin']."'");
+ $con=mysqli_query($con,"UPDATE `administrator` set `Password`='".md5($_POST['newpassword'])."' where `username`='".$_SESSION['alogin']."'");
 $_SESSION['msg']="Password Changed Successfully !!";
 }
 else
@@ -32,7 +32,12 @@ $_SESSION['msg']="Old Password not match !!";
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 	<title>Admin| Change Password</title>
+=======
+	<title>Admin | Change Password</title>
+	<link rel="icon" href="images/logo_free-file.png" type="image/png">
+>>>>>>> be8634d (fourth commit)
 	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link type="text/css" href="css/theme.css" rel="stylesheet">

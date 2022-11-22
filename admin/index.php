@@ -21,7 +21,7 @@ if($num==1){
 }
 else
 {
-	$_SESSION['errmsg']="Invalid email or password";
+	$_SESSION['errmsg']="Invalid username or password";
 	$extra="index.php";
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
@@ -36,7 +36,8 @@ else
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Shopping Portal | Admin login</title>
+	<title>Tech Gadget | Admin login</title>
+	<link rel="icon" href="images/logo_free-file.png" type="image/png">
 	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -115,7 +116,7 @@ else
 		<div class="container">
 			 
 
-			<b class="copyright">&copy; 2017 Shopping Portal </b> All rights reserved.
+			<b class="copyright">&copy; 2022 Tech Gadget. </b> All rights reserved.
 		</div>
 	</div>
 	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
