@@ -7,13 +7,13 @@
 
 ## Credentials for Admin & Customer
 ### Admin
-username: admin
+username: admin \
 password: p455w0rd
 
 ### Customer 1
-email: customer1@gmail.com
+email: customer1@gmail.com \
 password: p455w0rd
 
 ### Customer 2
-email: customer2@gmail.com
+email: customer2@gmail.com \
 password: p455w0rd
