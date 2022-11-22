@@ -55,7 +55,7 @@ if(isset($_POST['changepass'])){
 			document.chngpwd.cnfpass.focus();
 			return false;
 		}
-		else if(document.chngpwd.newpass.value!= document.chngpwd.cpass.value) {
+		else if(document.chngpwd.newpass.value== document.chngpwd.cpass.value) {
 			alert("There is no difference between Current Password and New Password  !!");
 			document.chngpwd.newpass.focus();
 			return false;

@@ -32,12 +32,8 @@ $_SESSION['msg']="Old Password not match !!";
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-	<title>Admin| Change Password</title>
-=======
 	<title>Admin | Change Password</title>
 	<link rel="icon" href="images/logo_free-file.png" type="image/png">
->>>>>>> be8634d (fourth commit)
 	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
