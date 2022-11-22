@@ -5,7 +5,7 @@
 - [Jessica Clarita Halim](https://github.com/jessicaclarita)
 - [Lim Siew Yin](https://github.com/Lim-Siew-Yin)
 
-## Credentials for Admin & Customer
+## Credentials for Users
 ### Admin
 username: admin \
 password: p455w0rd
