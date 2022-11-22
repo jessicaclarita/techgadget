@@ -56,21 +56,6 @@ else
 			  	<a class="brand" href="index.html">
 			  		TechGadget | Admin
 			  	</a>
-
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-				
-					<ul class="nav pull-right">
-
-						<li><a href="http://localhost/shopping/">
-						Back to Portal
-						
-						</a></li>
-
-						
-
-						
-					</ul>
-				</div><!-- /.nav-collapse -->
 			</div>
 		</div><!-- /navbar-inner -->
 	</div><!-- /navbar -->
