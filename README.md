@@ -5,6 +5,10 @@
 - [Jessica Clarita Halim](https://github.com/jessicaclarita)
 - [Lim Siew Yin](https://github.com/Lim-Siew-Yin)
 
+## Cloud Hosted at 000webhost
+### Link for Admin : http://group5-techgadget.000webhostapp.com/admin/index.php
+### Link Customer : http://group5-techgadget.000webhostapp.com/index.php
+
 ## Credentials for Users
 ### Admin
 username: admin \
